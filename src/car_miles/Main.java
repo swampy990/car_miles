@@ -35,7 +35,6 @@ public class Main {
 		
 		
 		int milesAtPurchase = 15550;
-//		int targetMiles = 0;
 		int currentMileage = 0;
 		int milesLeft = 0;
 		
@@ -65,7 +64,6 @@ public class Main {
 		int costPerMile = 6;
 		// calculate the average over use
 		double overUse = absOverRun / daysOwned;
-		//int foreCastMiles = purchaseMiles + (int)(overUse * daysLeft());
 		double forecastCarge = (overUse * daysLeft()) * ((double)costPerMile / 100); 
 		return forecastCarge;
 		
