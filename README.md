@@ -8,6 +8,7 @@ this using database connections at some point
 <table>
     <tr>
         <td> Craig Ballingall </td>
+    </tr><tr>
         <td> Tracy Ballingall </td>
     </tr>
 </table> 
