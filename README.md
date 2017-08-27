@@ -7,8 +7,8 @@ this using database connections at some point
 
 <table>
     <tr>
-        <td> Craig Ballingall </td>
+        <td> Craig Ballingall </td> <td> Junior code monkey </td>
     </tr><tr>
-        <td> Tracy Ballingall </td>
+        <td> Tracy Ballingall </td> <td> Project lead, tea maker </td>
     </tr>
 </table> 
