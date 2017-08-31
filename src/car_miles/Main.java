@@ -6,17 +6,12 @@ package car_miles;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.Locale;
 import java.util.Scanner;
 
 /**
  * @author Craig Ballingall
  *
  */
-
-
-import java.time.temporal.ChronoUnit;
-
 
 public class Main {
 
@@ -34,7 +29,6 @@ public class Main {
 // Setup the state of the car at purchase, purchase date was Jan 13, 2017 and the mileage on the contract was 15500
 		
 		
-		int milesAtPurchase = 15550;
 		int currentMileage = 0;
 		int milesLeft = 0;
 		
@@ -55,30 +49,30 @@ public class Main {
 		} else {
 			NumberFormat nf = NumberFormat.getCurrencyInstance();
 			System.err.println("!!You have exceeded milesage!!");
-			System.out.println("Expect a charge of " + nf.format(forecastCharge(milesLeft, daysSincePurchase, milesAtPurchase)));
+			System.out.println("Expect a charge of " + nf.format(forecastCharge(milesLeft, daysSincePurchase)));
 		}
 	}
 	
-	private static double forecastCharge(int overRun, int daysOwned, int purchaseMiles) {
+	private static double forecastCharge(int overRun, int daysOwned) {
 		int absOverRun = Math.abs(overRun);
 		int costPerMile = 6;
 		// calculate the average over use
-		double overUse = absOverRun / daysOwned;
-		double forecastCarge = (overUse * daysLeft()) * ((double)costPerMile / 100); 
-		return forecastCarge;
+		double overUse = absOverRun / (double)daysOwned;
+		return (overUse * daysLeft()) * ((double)costPerMile / 100); 
+		
 		
 	}
 	private static int daysLeft() {
 		LocalDate rd = LocalDate.of(2020, 01, 13);
 		LocalDate nowDate = LocalDate.now();
-		int days = (int)ChronoUnit.DAYS.between(nowDate, rd);
-		return days;
+		return  (int)ChronoUnit.DAYS.between(nowDate, rd);
+		
 	}
 	
 	private static int milesRemain(int currMiles, int daysSincePurchase) {
 		int targetMiles = (19 * daysSincePurchase) + 15500;
-		int milesRemain  = targetMiles - currMiles;
-		return milesRemain;
+		return targetMiles - currMiles;
+		
 	}
 	
 	
@@ -87,8 +81,8 @@ public class Main {
 		LocalDate ld = LocalDate.of(2017, 1, 13);
 		LocalDate nowDate = LocalDate.now();
 		
-		int days = (int)ChronoUnit.DAYS.between(ld, nowDate); // Yes, this would fail if you've had the car for more than 2.7 Million years
-		return days;
+		return (int)ChronoUnit.DAYS.between(ld, nowDate); // Yes, this would fail if you've had the car for more than 2.7 Million years
+		
 		
 		}
 	

@@ -5,7 +5,7 @@ My own project for monitoring the miles on my lease car
 Currently this is just a single class that doesn't store any history - aiming to get 
 this using database connections at some point 
 
-People involved in the project +are+
+People involved in the project *are*
 
 <table>
     <tr>
